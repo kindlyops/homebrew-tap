@@ -6,7 +6,7 @@ class Despite < Formula
   homepage "https://github.com/kindlyops/despite"
   url "https://github.com/kindlyops/despite/releases/download/v0.0.9/despite-darwin-amd64"
   version "v0.0.9"
-  sha256 41c8688d8d8993b9fef680d1d799b6474c286344fdc16ba6e98d0fe11c566922
+  sha256 "41c8688d8d8993b9fef680d1d799b6474c286344fdc16ba6e98d0fe11c566922"
 
   if OS.linux?
     if Hardware.is_64_bit?
