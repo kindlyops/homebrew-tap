@@ -6,14 +6,14 @@
 class Despite < Formula
   desc "Swiss army knife for the harried operator https://www.kindlyops.com"
   homepage "https://github.com/kindlyops/despite"
-  url "https://github.com/kindlyops/despite/releases/download/v0.0.12/#{darwin_name}"
-  version "v0.0.12"
-  sha256 "9030283d09fa8f20261b652125c6f244c30aeaf09be9f9052a3a45174014df6a"
+  url "https://github.com/kindlyops/despite/releases/download/v0.0.13/despite-darwin-10.9-amd64"
+  version "v0.0.13"
+  sha256 "d8722dfaa9e0bd5df89be7aa25c64d0495fef24d0f74a35b77c183568481d2de"
 
   if OS.linux?
     if Hardware.is_64_bit?
-      url "https://github.com/kindlyops/despite/releases/download/v0.0.12/#{linux_name}"
-      sha256 "22970063f4bc2ebe9bbb67b0e148fea0d287efe994b42f23b2cb8b74f4e1f3c9"
+      url "https://github.com/kindlyops/despite/releases/download/v0.0.13/despite-linux-amd64"
+      sha256 "e2518b7cc0b8e5fdd252f1af916590248f5123963925a2934433d76db579e4f0"
     end
   end
 
@@ -21,9 +21,9 @@ class Despite < Formula
 
   def install
     if OS.linux?
-      bin.install linux_name => 'despite'
+      bin.install despite-linux-amd64 => 'despite'
     else
-      bin.install darwin_name => 'despite'
+      bin.install despite-darwin-10.9-amd64 => 'despite'
     end
   end
 
