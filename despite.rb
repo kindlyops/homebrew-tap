@@ -6,14 +6,14 @@
 class Despite < Formula
   desc "Swiss army knife for the harried operator https://www.kindlyops.com"
   homepage "https://github.com/kindlyops/despite"
-  url "https://github.com/kindlyops/despite/releases/download/v0.0.15/despite_darwin_amd64"
-  version "v0.0.15"
-  sha256 "ae2c90a8eec004d56b51e6822edc1ee5aeea72cbb5b474a1a1de6cb7548a5b77"
+  url "https://github.com/kindlyops/despite/releases/download/v0.0.16/despite_darwin_amd64"
+  version "v0.0.16"
+  sha256 "c5f442c154e5854a8cc0df5f202cb1064f55ac1f455732ea1a6241c904af141b"
 
   if OS.linux?
-    if Hardware.is_64_bit?
-      url "https://github.com/kindlyops/despite/releases/download/v0.0.15/despite_linux_amd64"
-      sha256 "7e05fa864e6ce1d5d2a6d2e8242241cb1e1f1d7772d3017cbd495d0f45208205"
+    if Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/despite/releases/download/v0.0.16/despite_linux_amd64"
+      sha256 "c2da3f29caa1c5ba5965565f2eab780f0b7d75921fa0f3f4098d2cbd1b6ad832"
     end
   end
 
