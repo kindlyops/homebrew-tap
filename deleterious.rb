@@ -2,14 +2,14 @@
 class Deleterious < Formula
   desc "Deleterious helps find orphaned resources from AWS CloudFormation DeletionPolicy: Retain"
   homepage "https://github.com/kindlyops/deleterious"
-  version "0.1.9"
+  version "0.1.10"
 
   if OS.mac?
-    url "https://github.com/kindlyops/deleterious/releases/download/v0.1.9/deleterious_0.1.9_darwin_amd64.tar.gz"
-    sha256 "d4771cb2639d3a6a44dae40aede4c257ba545aab64fbc1a433e4654261032815"
+    url "https://github.com/kindlyops/deleterious/releases/download/v0.1.10/deleterious_0.1.10_darwin_amd64.tar.gz"
+    sha256 "ae6f0b883a30a28d0640cce5afbfd96df7e56e6381fba6d662b12763d2583d39"
   elsif OS.linux?
-    url "https://github.com/kindlyops/deleterious/releases/download/v0.1.9/deleterious_0.1.9_linux_amd64.tar.gz"
-    sha256 "bc7f5600b96a6b55a1de57ccd1ac694e334203ff2fcbf43684b84f108c011471"
+    url "https://github.com/kindlyops/deleterious/releases/download/v0.1.10/deleterious_0.1.10_linux_amd64.tar.gz"
+    sha256 "721e6f504a2f23db3b0c9cc67143052680a14918ba4273270f96e325f8d35d2e"
   end
 
   def install
