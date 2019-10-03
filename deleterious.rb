@@ -2,16 +2,16 @@
 class Deleterious < Formula
   desc "Deleterious helps find orphaned resources from AWS CloudFormation DeletionPolicy: Retain"
   homepage "https://github.com/kindlyops/deleterious"
-  version "0.1.24"
+  version "0.1.25"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/kindlyops/deleterious/releases/download/v0.1.24/deleterious_0.1.24_darwin_amd64.tar.gz"
-    sha256 "fdd38f4f78391a42d9313df2ca477501cbef456b760040a1c82eaabc0ffa16c8"
+    url "https://github.com/kindlyops/deleterious/releases/download/v0.1.25/deleterious_0.1.25_darwin_amd64.tar.gz"
+    sha256 "ab8046420aacf4be2746ab62452cfe2eb527a254675ca21c71570378a41a8d6e"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.24/deleterious_0.1.24_linux_amd64.tar.gz"
-      sha256 "cce91ec8196f732c33a6de7a9f608090cde2a3f51f618f0085ed57a8583d58e6"
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.25/deleterious_0.1.25_linux_amd64.tar.gz"
+      sha256 "f587ab8943f4b7fd3fb181cb93b869576978a4fa306a5f6db280c5785144fa82"
     end
   end
 
@@ -24,7 +24,7 @@ class Deleterious < Formula
     
     _  ___           _ _        ___
     | |/ (_)_ __   __| | |_   _ / _ \\ _ __  ___
-    | ' /| | '_ \\ / _` | | | | | | | | '_ \\/ __|
+    | ' /| | '_ \\ / _| | | | | | | | | '_ \\/ __|
     | . \\| | | | | (_| | | |_| | |_| | |_) \__ \\
     |_|\\_\\_|_| |_|\\__,_|_|\\__, |\\___/| .__/|___/
                           |___/      |_|
