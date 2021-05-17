@@ -5,16 +5,16 @@
 class Vbs < Formula
   desc "vbs helps work with video broadcast files and streams."
   homepage "https://github.com/kindlyops/vbs"
-  version "0.1.9"
+  version "0.1.11"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/kindlyops/vbs/releases/download/v0.1.9/vbs_0.1.9_darwin_amd64.tar.gz"
-    sha256 "2a6cf7e340aaa75d39d4e32227ea945b40da6ddcfcb161d8f557e66ff7f5ef40"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/kindlyops/vbs/releases/download/v0.1.11/vbs_0.1.11_darwin_amd64.tar.gz"
+    sha256 "b6f8266892fe33f8203e4c06c431c791949c950225e61beb6544f820098f3879"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kindlyops/vbs/releases/download/v0.1.9/vbs_0.1.9_linux_amd64.tar.gz"
-    sha256 "e1ab7c81ee416ab8cae476c96f869e5557a98e32a3ca426e2e80b0445e0b62ff"
+    url "https://github.com/kindlyops/vbs/releases/download/v0.1.11/vbs_0.1.11_linux_amd64.tar.gz"
+    sha256 "eaef6ed41902ec64a5903a7cb62284bfc6aa5ccfa18966581e5e90e55530de82"
   end
 
   def install
