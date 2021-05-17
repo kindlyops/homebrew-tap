@@ -5,16 +5,16 @@
 class Streamer < Formula
   desc "🚣 streamer is utilities for working with kinesis"
   homepage "https://github.com/kindlyops/streamer"
-  version "0.1.0"
+  version "0.1.1"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/kindlyops/streamer/releases/download/v0.1.0/streamer_0.1.0_darwin_amd64.tar.gz"
-    sha256 "d6822ac1350ae27af727fea96a7d5128c5d64510c48fb1767bacff8e0a5a553e"
+    url "https://github.com/kindlyops/streamer/releases/download/v0.1.1/streamer_0.1.1_darwin_amd64.tar.gz"
+    sha256 "b5a1da1549e23f06ed77f3edd9612c7ba97ec727ed127c6305bebdc6c3e88aea"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kindlyops/streamer/releases/download/v0.1.0/streamer_0.1.0_linux_amd64.tar.gz"
-    sha256 "bfc095cbf8442bce39153a335068dcc3709bc93d98a3b881564481edb320d236"
+    url "https://github.com/kindlyops/streamer/releases/download/v0.1.1/streamer_0.1.1_linux_amd64.tar.gz"
+    sha256 "cf721dc5d1a2576a47e000ddd182540856439a7920a5096fdde0c32f92ebf469"
   end
 
   def install
