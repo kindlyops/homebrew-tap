@@ -5,25 +5,28 @@
 class Vbs < Formula
   desc "vbs helps work with video broadcast files and streams."
   homepage "https://github.com/kindlyops/vbs"
-  version "0.1.12"
-  bottle :unneeded
+  version "0.1.13"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.1.12/vbs_0.1.12_darwin_amd64.tar.gz"
-      sha256 "62e1086e740b724aafb318bb9a28b25a88f133bda6b5bc6aed94e75e8fcc6225"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.1.13/vbs_0.1.13_darwin_amd64.tar.gz"
+      sha256 "f35fb736bd8fd61843ae0a25e9b74532a4da708cd8d26dced09b12048117a280"
+
+      def install
+        bin.install "vbs"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.1.12/vbs_0.1.12_linux_amd64.tar.gz"
-      sha256 "205ec6004361e723029aaeeb9f28e6d1c2374858a495998fe3e89ef59db3a3c5"
-    end
-  end
+      url "https://github.com/kindlyops/vbs/releases/download/v0.1.13/vbs_0.1.13_linux_amd64.tar.gz"
+      sha256 "861c87a43b199b668afd91711e6a6749d1c8ec0943b8546e736e08fbc2861ee7"
 
-  def install
-    bin.install "vbs"
+      def install
+        bin.install "vbs"
+      end
+    end
   end
 
   def caveats; <<~EOS
