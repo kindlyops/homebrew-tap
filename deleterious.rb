@@ -5,20 +5,36 @@
 class Deleterious < Formula
   desc "Deleterious helps find orphaned resources from AWS CloudFormation DeletionPolicy: Retain"
   homepage "https://github.com/kindlyops/deleterious"
-  version "0.1.37"
-  bottle :unneeded
+  version "0.1.38"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/kindlyops/deleterious/releases/download/v0.1.37/deleterious_0.1.37_darwin_amd64.tar.gz"
-    sha256 "dd4d6f531f9eb317e172dc5f8418e3843413a37a71eebd6f95d6143c0a145301"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kindlyops/deleterious/releases/download/v0.1.37/deleterious_0.1.37_linux_amd64.tar.gz"
-    sha256 "40969be4b85fd9998f6b0b8baf13c015df3d08de4329b6b9f6931d2b978f8545"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.38/deleterious_0.1.38_darwin_arm64.tar.gz"
+      sha256 "921e0439bc95e4285cd881125f2f32610fab16c6e9329a9eb33227a107507919"
+
+      def install
+        bin.install "deleterious"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.38/deleterious_0.1.38_darwin_amd64.tar.gz"
+      sha256 "921e0439bc95e4285cd881125f2f32610fab16c6e9329a9eb33227a107507919"
+
+      def install
+        bin.install "deleterious"
+      end
+    end
   end
 
-  def install
-    bin.install "deleterious"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.38/deleterious_0.1.38_linux_amd64.tar.gz"
+      sha256 "579f76d0302e12fb78e65996d3949a71817931001cde2b32eb79b8ec4f39bdb9"
+
+      def install
+        bin.install "deleterious"
+      end
+    end
   end
 
   def caveats; <<~EOS
