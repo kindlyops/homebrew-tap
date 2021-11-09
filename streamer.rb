@@ -5,20 +5,36 @@
 class Streamer < Formula
   desc "🚣 streamer is utilities for working with kinesis"
   homepage "https://github.com/kindlyops/streamer"
-  version "0.1.3"
-  bottle :unneeded
+  version "0.1.4"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/kindlyops/streamer/releases/download/v0.1.3/streamer_0.1.3_darwin_amd64.tar.gz"
-    sha256 "86db7bcf821622018106196b2eb599d89c72cfbf3d29e013d221870afe635198"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kindlyops/streamer/releases/download/v0.1.3/streamer_0.1.3_linux_amd64.tar.gz"
-    sha256 "2aee196a39c92a12940f3c33fc72ee6659bdd9028f1ffe6ca0fce19da97adfef"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/kindlyops/streamer/releases/download/v0.1.4/streamer_0.1.4_darwin_arm64.tar.gz"
+      sha256 "a6739010e389337f4a27a7d0cab21f542604a45586c0c3aafdbc33bbf604a516"
+
+      def install
+        bin.install "streamer"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/streamer/releases/download/v0.1.4/streamer_0.1.4_darwin_amd64.tar.gz"
+      sha256 "d0b6f8538cdf0617caf36afcd712348ab6ad4ef4c5b4306fb03fb5b97192d540"
+
+      def install
+        bin.install "streamer"
+      end
+    end
   end
 
-  def install
-    bin.install "streamer"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/streamer/releases/download/v0.1.4/streamer_0.1.4_linux_amd64.tar.gz"
+      sha256 "143da60e34deb04605dd993973646e8d12d045b9fcd274f0c5bce2b8ec6996ff"
+
+      def install
+        bin.install "streamer"
+      end
+    end
   end
 
   def caveats; <<~EOS
