@@ -5,20 +5,44 @@
 class Terp < Formula
   desc "🙈 terp is an experimental eBPF diagnostic interpreter"
   homepage "https://github.com/kindlyops/terp"
-  version "0.0.2"
-  bottle :unneeded
+  version "0.0.4"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/kindlyops/terp/releases/download/v0.0.2/terp_0.0.2_darwin_amd64.tar.gz"
-    sha256 "ba34568c768e100e5eb1c11de628bdc518894274965a589f4c70e28fa6330a91"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kindlyops/terp/releases/download/v0.0.2/terp_0.0.2_linux_amd64.tar.gz"
-    sha256 "1d134f400a87afb8620ba7c8ce9f2e015b7b101c5318383897f5f78fabc4a72f"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/terp/releases/download/v0.0.4/terp_0.0.4_darwin_amd64.tar.gz"
+      sha256 "c2917d1abd95dfbb2f45aaf70c13c902c458669aba37198949b85995f4cd3f5c"
+
+      def install
+        bin.install "terp"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/kindlyops/terp/releases/download/v0.0.4/terp_0.0.4_darwin_arm64.tar.gz"
+      sha256 "8f3d8dc4de8c865c94a255cba9dabf89525c298cf773f6c0ce3b8f4b48cad65b"
+
+      def install
+        bin.install "terp"
+      end
+    end
   end
 
-  def install
-    bin.install "terp"
+  on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/terp/releases/download/v0.0.4/terp_0.0.4_linux_arm64.tar.gz"
+      sha256 "9c5fd334af054859b9ce9f50afc6467522304e90c8ad4ca84379f15e93791810"
+
+      def install
+        bin.install "terp"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/terp/releases/download/v0.0.4/terp_0.0.4_linux_amd64.tar.gz"
+      sha256 "3d5c1c10721dcd1a0a5eb9ce6b67661b02698c799c6b140f3a144a66748e0c62"
+
+      def install
+        bin.install "terp"
+      end
+    end
   end
 
   def caveats; <<~EOS
