@@ -5,20 +5,20 @@
 class Deleterious < Formula
   desc "Deleterious helps find orphaned resources from AWS CloudFormation DeletionPolicy: Retain"
   homepage "https://github.com/kindlyops/deleterious"
-  version "0.1.38"
+  version "0.1.39"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.38/deleterious_0.1.38_darwin_arm64.tar.gz"
-      sha256 "921e0439bc95e4285cd881125f2f32610fab16c6e9329a9eb33227a107507919"
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.39/deleterious_0.1.39_darwin_arm64.tar.gz"
+      sha256 "4175f3743e8aeca096a1f2ce662e3a1e48245a411f17bf6eeca7d2d8daa27867"
 
       def install
         bin.install "deleterious"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.38/deleterious_0.1.38_darwin_amd64.tar.gz"
-      sha256 "921e0439bc95e4285cd881125f2f32610fab16c6e9329a9eb33227a107507919"
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.39/deleterious_0.1.39_darwin_amd64.tar.gz"
+      sha256 "4175f3743e8aeca096a1f2ce662e3a1e48245a411f17bf6eeca7d2d8daa27867"
 
       def install
         bin.install "deleterious"
@@ -27,9 +27,17 @@ class Deleterious < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.39/deleterious_0.1.39_linux_arm64.tar.gz"
+      sha256 "adb478e2d0e9c188a7892e7e66e9372c95848318e9f3e04a4fec145917e98e3c"
+
+      def install
+        bin.install "deleterious"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.38/deleterious_0.1.38_linux_amd64.tar.gz"
-      sha256 "579f76d0302e12fb78e65996d3949a71817931001cde2b32eb79b8ec4f39bdb9"
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.39/deleterious_0.1.39_linux_amd64.tar.gz"
+      sha256 "b20b716e4cbdd39096fe8983c929cc28836763ae70749337fa56321b1eb5d8d7"
 
       def install
         bin.install "deleterious"
