@@ -5,20 +5,20 @@
 class Deleterious < Formula
   desc "Deleterious helps find orphaned resources from AWS CloudFormation DeletionPolicy: Retain"
   homepage "https://github.com/kindlyops/deleterious"
-  version "0.1.44"
+  version "0.1.45"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.44/deleterious_0.1.44_darwin_amd64.tar.gz"
-      sha256 "9eae9b3635ab80f061924f750278f85a9ec96070cfe3022e11cca86a5eeff2e2"
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.45/deleterious_0.1.45_darwin_amd64.tar.gz"
+      sha256 "88e3e84ed9d738c62ab1a70ddb95faf014548e5028d7f362be1343b4ecdc1a8c"
 
       def install
         bin.install "deleterious"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.44/deleterious_0.1.44_darwin_arm64.tar.gz"
-      sha256 "9eae9b3635ab80f061924f750278f85a9ec96070cfe3022e11cca86a5eeff2e2"
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.45/deleterious_0.1.45_darwin_arm64.tar.gz"
+      sha256 "88e3e84ed9d738c62ab1a70ddb95faf014548e5028d7f362be1343b4ecdc1a8c"
 
       def install
         bin.install "deleterious"
@@ -27,17 +27,17 @@ class Deleterious < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.44/deleterious_0.1.44_linux_amd64.tar.gz"
-      sha256 "2f201367ef27bbb167f6e7df7d577d06707c3a1924aa29a9de68f03ebf25effa"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.45/deleterious_0.1.45_linux_arm64.tar.gz"
+      sha256 "bddd78aeef2c035509b5799e949b88be65c9940090ec49cca63ccb3b7fd568cc"
 
       def install
         bin.install "deleterious"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.44/deleterious_0.1.44_linux_arm64.tar.gz"
-      sha256 "17b3b9adc468692dd4a3fa0269d854d1b20f21e591de60a5e00263cd016b3d39"
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.45/deleterious_0.1.45_linux_amd64.tar.gz"
+      sha256 "7b96a968a6f81a01f79d1773b14cde31b36a2ce4df8d736a4581cfe6c9191dba"
 
       def install
         bin.install "deleterious"
