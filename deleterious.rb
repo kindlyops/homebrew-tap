@@ -8,17 +8,17 @@ class Deleterious < Formula
   version "0.1.49"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_darwin_arm64.tar.gz"
-      sha256 "6cadf733f498f5eeade4347df027fefdb11a48af64234f851453f8b22e6622f7"
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_darwin_amd64.tar.gz"
+      sha256 "854a6603e62d555b505d11cad1ef8a66661c6ff028c4bac984d0a3d5cee4a711"
 
       def install
         bin.install "deleterious"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_darwin_amd64.tar.gz"
-      sha256 "6cadf733f498f5eeade4347df027fefdb11a48af64234f851453f8b22e6622f7"
+    if Hardware::CPU.arm?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_darwin_arm64.tar.gz"
+      sha256 "854a6603e62d555b505d11cad1ef8a66661c6ff028c4bac984d0a3d5cee4a711"
 
       def install
         bin.install "deleterious"
@@ -29,7 +29,7 @@ class Deleterious < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_linux_arm64.tar.gz"
-      sha256 "89656cf8380e45ea8a3a9b02371ba100776cc5c7a7c4e4d4e35fc3c639dc491c"
+      sha256 "60812c0411683019cd9914022c178a532df50842276ca8c5fbe0c614047f1f86"
 
       def install
         bin.install "deleterious"
@@ -37,7 +37,7 @@ class Deleterious < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_linux_amd64.tar.gz"
-      sha256 "2681941f72df1065b9b63bfe521021234ce52309c4ff33db489dca2e9ceb9308"
+      sha256 "71e8dbbd92b824b7d3fa49bb78f304bdd485747c56a29a229bf80df1b5d75dcd"
 
       def install
         bin.install "deleterious"
