@@ -5,20 +5,20 @@
 class Vbs < Formula
   desc "vbs helps work with video broadcast files and streams."
   homepage "https://github.com/kindlyops/vbs"
-  version "0.2.6"
+  version "0.2.7"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.6/vbs_0.2.6_darwin_arm64.tar.gz"
-      sha256 "dc9f2d1751f7e43a6ce0106c571fdc4fc8f26450f56e69ce1c1beb60519bd8c9"
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.7/vbs_0.2.7_darwin_amd64.tar.gz"
+      sha256 "d160c5d09f614499443b07c8deee2e0ff343e2b481be7835a3d58e3e549f4c59"
 
       def install
         bin.install "vbs"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.6/vbs_0.2.6_darwin_amd64.tar.gz"
-      sha256 "073deb6302adbff9131efde5d2776cd19660365f066c571ec10b43901bec967a"
+    if Hardware::CPU.arm?
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.7/vbs_0.2.7_darwin_arm64.tar.gz"
+      sha256 "13548f7966c5553a13edda396cfd18d14e3d5cb39991f31a7cf7708ebf4d13ec"
 
       def install
         bin.install "vbs"
@@ -28,16 +28,16 @@ class Vbs < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.6/vbs_0.2.6_linux_amd64.tar.gz"
-      sha256 "b6050b251057ea193a5ae05711ad856f922b042d4a2e276d26a4929449b350b8"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.7/vbs_0.2.7_linux_amd64.tar.gz"
+      sha256 "85ad49bc027069957824a3f7251836be897968bd4c2fb7a04b354b9ce24a9519"
 
       def install
         bin.install "vbs"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.6/vbs_0.2.6_linux_arm64.tar.gz"
-      sha256 "816d4bfa5d385d3e72f4e21e094c67630c5db1a9de21ac8753c70ec5172a899c"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.7/vbs_0.2.7_linux_arm64.tar.gz"
+      sha256 "0aaa62a093d8ee1c79b8fa8f5f3e54e9620c4c6424ae7708cbc6ff928d3a1775"
 
       def install
         bin.install "vbs"
@@ -45,17 +45,18 @@ class Vbs < Formula
     end
   end
 
-  def caveats; <<~EOS
-    Brought to you by
+  def caveats
+    <<~EOS
+      Brought to you by
 
-    _  ___           _ _        ___
-    | |/ (_)_ __   __| | |_   _ / _ \\ _ __  ___
-    | ' /| | '_ \\ / _| | | | | | | | | '_ \\/ __|
-    | . \\| | | | | (_| | | |_| | |_| | |_) \__ \\
-    |_|\\_\\_|_| |_|\\__,_|_|\\__, |\\___/| .__/|___/
-                          |___/      |_|
-    use at your own risk.
-  EOS
+      _  ___           _ _        ___
+      | |/ (_)_ __   __| | |_   _ / _ \\ _ __  ___
+      | ' /| | '_ \\ / _| | | | | | | | | '_ \\/ __|
+      | . \\| | | | | (_| | | |_| | |_| | |_) \__ \\
+      |_|\\_\\_|_| |_|\\__,_|_|\\__, |\\___/| .__/|___/
+                            |___/      |_|
+      use at your own risk.
+    EOS
   end
 
   test do
