@@ -5,20 +5,20 @@
 class Vbs < Formula
   desc "vbs helps work with video broadcast files and streams."
   homepage "https://github.com/kindlyops/vbs"
-  version "0.2.7"
+  version "0.2.8"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.7/vbs_0.2.7_darwin_amd64.tar.gz"
-      sha256 "d160c5d09f614499443b07c8deee2e0ff343e2b481be7835a3d58e3e549f4c59"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.8/vbs_0.2.8_darwin_amd64.tar.gz"
+      sha256 "7b16b2bb5986c54637532fa5bfce390bdac6b3f2abb460b91447ad06296c7185"
 
       def install
         bin.install "vbs"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.7/vbs_0.2.7_darwin_arm64.tar.gz"
-      sha256 "13548f7966c5553a13edda396cfd18d14e3d5cb39991f31a7cf7708ebf4d13ec"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.8/vbs_0.2.8_darwin_arm64.tar.gz"
+      sha256 "bdb5e2ad89393ad8b143e16d91b3ba06f6a6b2d369f383e9ac6706328f9b591a"
 
       def install
         bin.install "vbs"
@@ -27,17 +27,17 @@ class Vbs < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.7/vbs_0.2.7_linux_amd64.tar.gz"
-      sha256 "85ad49bc027069957824a3f7251836be897968bd4c2fb7a04b354b9ce24a9519"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.8/vbs_0.2.8_linux_arm64.tar.gz"
+      sha256 "5fbcb83bc2f8b2fffe9aebd5a18f0fc41f74b96e82afebc345d92e7f91a2be8b"
 
       def install
         bin.install "vbs"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.7/vbs_0.2.7_linux_arm64.tar.gz"
-      sha256 "0aaa62a093d8ee1c79b8fa8f5f3e54e9620c4c6424ae7708cbc6ff928d3a1775"
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.8/vbs_0.2.8_linux_amd64.tar.gz"
+      sha256 "77e47272390d83570bc16160012124b0d1198b095a3575ba01e916430f157f8a"
 
       def install
         bin.install "vbs"
