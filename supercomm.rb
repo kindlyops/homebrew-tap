@@ -5,20 +5,20 @@
 class Supercomm < Formula
   desc "SuperComm makes live events less stressful."
   homepage "https://supercomm.rocks"
-  version "0.1.3"
+  version "0.1.4"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.3/supercomm_0.1.3_darwin_amd64.tar.gz"
-      sha256 "0504ff3f0e589b1d2be62efca9ff717a8ca52e04797ddd1a6fdfa2a4e256f75b"
+    if Hardware::CPU.arm?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.4/supercomm_0.1.4_darwin_arm64.tar.gz"
+      sha256 "fc121e564428bc0c80b2c0b0da95b5def5ebb5d0a0f5c93eeb92e5545effcac5"
 
       def install
         bin.install "supercomm"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.3/supercomm_0.1.3_darwin_arm64.tar.gz"
-      sha256 "6f859e339b3f9371edf498e8c00d0f09e3275cec29bc1745daa1761953467805"
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.4/supercomm_0.1.4_darwin_amd64.tar.gz"
+      sha256 "4d0ed46bd157f20a6e93f761392e022a0ec73165a3c38ec56447ed89a4bedcd7"
 
       def install
         bin.install "supercomm"
@@ -27,17 +27,17 @@ class Supercomm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.3/supercomm_0.1.3_linux_arm64.tar.gz"
-      sha256 "7cdae640e55765d4e80596899b0b27428dde717121fcbb7061950b5d6c909212"
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.4/supercomm_0.1.4_linux_amd64.tar.gz"
+      sha256 "f3de0710f8563ada8a61b2e5a76d203461d5683bac23126f14f3e44a839b42e2"
 
       def install
         bin.install "supercomm"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.3/supercomm_0.1.3_linux_amd64.tar.gz"
-      sha256 "18e051f0beb2417ac46209b3da05f2ee892034ceab0b34d38df5dda7ce6d6d66"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.4/supercomm_0.1.4_linux_arm64.tar.gz"
+      sha256 "a9300a7c59a115487ec3c555d8b3748d9745cd58205a29bdd823c01d693a3f3f"
 
       def install
         bin.install "supercomm"
