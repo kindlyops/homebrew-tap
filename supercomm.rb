@@ -5,20 +5,20 @@
 class Supercomm < Formula
   desc "SuperComm makes live events less stressful."
   homepage "https://supercomm.rocks"
-  version "0.1.4"
+  version "0.1.5"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.4/supercomm_0.1.4_darwin_arm64.tar.gz"
-      sha256 "fc121e564428bc0c80b2c0b0da95b5def5ebb5d0a0f5c93eeb92e5545effcac5"
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.5/supercomm_0.1.5_darwin_arm64.tar.gz"
+      sha256 "e7d6228b810b27c481d658caa30729177f7773db1a2ae9fdc8f192f27d4b4ea8"
 
       def install
         bin.install "supercomm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.4/supercomm_0.1.4_darwin_amd64.tar.gz"
-      sha256 "4d0ed46bd157f20a6e93f761392e022a0ec73165a3c38ec56447ed89a4bedcd7"
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.5/supercomm_0.1.5_darwin_amd64.tar.gz"
+      sha256 "3f82e534e0dbc81672db05672db323f3019eca6983be9be19c1a288bd86b6945"
 
       def install
         bin.install "supercomm"
@@ -27,17 +27,17 @@ class Supercomm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.4/supercomm_0.1.4_linux_amd64.tar.gz"
-      sha256 "f3de0710f8563ada8a61b2e5a76d203461d5683bac23126f14f3e44a839b42e2"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.5/supercomm_0.1.5_linux_arm64.tar.gz"
+      sha256 "7caa59b4cb3e4a371d8ee352ceecf42e528f49186239855dbbb5a058ff317e17"
 
       def install
         bin.install "supercomm"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.4/supercomm_0.1.4_linux_arm64.tar.gz"
-      sha256 "a9300a7c59a115487ec3c555d8b3748d9745cd58205a29bdd823c01d693a3f3f"
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.5/supercomm_0.1.5_linux_amd64.tar.gz"
+      sha256 "06fb3b94142ce7ff427d22943b42a2ad2d88d35114c88c7d448b392af3a8f878"
 
       def install
         bin.install "supercomm"
@@ -47,19 +47,12 @@ class Supercomm < Formula
 
   def caveats
     <<~EOS
-      Brought to you by
-           ___           ___           ___           ___           ___           ___           ___           ___           ___
-          /\  \         /\__\         /\  \         /\  \         /\  \         /\  \         /\  \         /\__\         /\__\
-         /::\  \       /:/  /        /::\  \       /::\  \       /::\  \       /::\  \       /::\  \       /::|  |       /::|  |
-        /:/\ \  \     /:/  /        /:/\:\  \     /:/\:\  \     /:/\:\  \     /:/\:\  \     /:/\:\  \     /:|:|  |      /:|:|  |
-       _\:\~\ \  \   /:/  /  ___   /::\~\:\  \   /::\~\:\  \   /::\~\:\  \   /:/  \:\  \   /:/  \:\  \   /:/|:|__|__   /:/|:|__|__
-      /\ \:\ \ \__\ /:/__/  /\__\ /:/\:\ \:\__\ /:/\:\ \:\__\ /:/\:\ \:\__\ /:/__/ \:\__\ /:/__/ \:\__\ /:/ |::::\__\ /:/ |::::\__\
-      \:\ \:\ \/__/ \:\  \ /:/  / \/__\:\/:/  / \:\~\:\ \/__/ \/_|::\/:/  / \:\  \  \/__/ \:\  \ /:/  / \/__/~~/:/  / \/__/~~/:/  /
-       \:\ \:\__\    \:\  /:/  /       \::/  /   \:\ \:\__\      |:|::/  /   \:\  \        \:\  /:/  /        /:/  /        /:/  /
-        \:\/:/  /     \:\/:/  /         \/__/     \:\ \/__/      |:|\/__/     \:\  \        \:\/:/  /        /:/  /        /:/  /
-         \::/  /       \::/  /                     \:\__\        |:|  |        \:\__\        \::/  /        /:/  /        /:/  /
-          \/__/         \/__/                       \/__/         \|__|         \/__/         \/__/         \/__/         \/__/
-      use at your own risk.
+      ███████╗██╗   ██╗██████╗ ███████╗██████╗  ██████╗ ██████╗ ███╗   ███╗███╗   ███╗
+      ██╔════╝██║   ██║██╔══██╗██╔════╝██╔══██╗██╔════╝██╔═══██╗████╗ ████║████╗ ████║
+      ███████╗██║   ██║██████╔╝█████╗  ██████╔╝██║     ██║   ██║██╔████╔██║██╔████╔██║
+      ╚════██║██║   ██║██╔═══╝ ██╔══╝  ██╔══██╗██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║
+      ███████║╚██████╔╝██║     ███████╗██║  ██║╚██████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║
+      ╚══════╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝
     EOS
   end
 
