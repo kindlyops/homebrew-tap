@@ -5,20 +5,20 @@
 class Supercomm < Formula
   desc "SuperComm makes live events less stressful."
   homepage "https://supercomm.rocks"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.5/supercomm_0.1.5_darwin_arm64.tar.gz"
-      sha256 "e7d6228b810b27c481d658caa30729177f7773db1a2ae9fdc8f192f27d4b4ea8"
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.6/supercomm_0.1.6_darwin_amd64.tar.gz"
+      sha256 "a64ecb61435a0e4aaf93f5b4744baa8e60547271e98ebb48c5704fb1ea1c0cb9"
 
       def install
         bin.install "supercomm"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.5/supercomm_0.1.5_darwin_amd64.tar.gz"
-      sha256 "3f82e534e0dbc81672db05672db323f3019eca6983be9be19c1a288bd86b6945"
+    if Hardware::CPU.arm?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.6/supercomm_0.1.6_darwin_arm64.tar.gz"
+      sha256 "7fd10c847a5874e06de5f54e49deb4f3e92c6986cbd2c615340f0d65cea412f5"
 
       def install
         bin.install "supercomm"
@@ -28,16 +28,16 @@ class Supercomm < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.5/supercomm_0.1.5_linux_arm64.tar.gz"
-      sha256 "7caa59b4cb3e4a371d8ee352ceecf42e528f49186239855dbbb5a058ff317e17"
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.6/supercomm_0.1.6_linux_arm64.tar.gz"
+      sha256 "a56317743aedd65ac78fd8e213eb7d195329ae90ccd59ed585dfb573eaf3f3fe"
 
       def install
         bin.install "supercomm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.5/supercomm_0.1.5_linux_amd64.tar.gz"
-      sha256 "06fb3b94142ce7ff427d22943b42a2ad2d88d35114c88c7d448b392af3a8f878"
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.6/supercomm_0.1.6_linux_amd64.tar.gz"
+      sha256 "34a6354a05d352596d932308edc895d551f31a597033439e5a5f58f0ebaf75a8"
 
       def install
         bin.install "supercomm"
