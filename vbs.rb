@@ -5,20 +5,20 @@
 class Vbs < Formula
   desc "vbs helps work with video broadcast files and streams."
   homepage "https://github.com/kindlyops/vbs"
-  version "0.2.10"
+  version "0.2.11"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.10/vbs_0.2.10_darwin_amd64.tar.gz"
-      sha256 "0f2c7f71a140380a94757772f319a2e9e9bdfa8a5e270148ce006b9964925009"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.11/vbs_0.2.11_darwin_amd64.tar.gz"
+      sha256 "d34bb61aab24ebd01c154ced79edc8e5560df5fd236a42ad5fa03fc5e6ccb684"
 
       def install
         bin.install "vbs"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.10/vbs_0.2.10_darwin_arm64.tar.gz"
-      sha256 "ea18ed8e9b9ae9c7cab2c93dddbfdc08bd594320dc6b74cdb0485fa9a1a8711f"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.11/vbs_0.2.11_darwin_arm64.tar.gz"
+      sha256 "0d94e1478e56e1d764694ec9c93ba82018beee0f4672bb9dbb9353bc28e7c917"
 
       def install
         bin.install "vbs"
@@ -28,16 +28,16 @@ class Vbs < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.10/vbs_0.2.10_linux_amd64.tar.gz"
-      sha256 "6c942c0c7f6a4c6e030228b41ddbd92cc85f1fa7aafff2e2eaa157509dcb150d"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.11/vbs_0.2.11_linux_amd64.tar.gz"
+      sha256 "fb8575a7e44bbfe76a1b2c57c70cf873337ca577d19fdae55ab9381f56d4bd65"
 
       def install
         bin.install "vbs"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.10/vbs_0.2.10_linux_arm64.tar.gz"
-      sha256 "77d28e814b7bc1104528baefcf4d523bf8bd7fb76ed22872d8c3cb6916e4f22e"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.11/vbs_0.2.11_linux_arm64.tar.gz"
+      sha256 "62abaa96b1a380462987a4fc318758a5700082a2fd1e75a1c69faa33bbf8f5d8"
 
       def install
         bin.install "vbs"
