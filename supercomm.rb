@@ -5,12 +5,12 @@
 class Supercomm < Formula
   desc "SuperComm makes live events less stressful."
   homepage "https://supercomm.rocks"
-  version "0.1.24"
+  version "0.1.25"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.24/supercomm_0.1.24_darwin_arm64.tar.gz"
-      sha256 "fcf3e7296739acfd16a892cf3c80b118f929bfaaf63f63863d73ef2beb704d92"
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.25/supercomm_0.1.25_darwin_arm64.tar.gz"
+      sha256 "460691cb7a79e853c9bfa5a016b8a331081bd681bab06f07f9aa7cdc98e65c26"
 
       def install
         bin.install "supercomm"
@@ -19,17 +19,17 @@ class Supercomm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.24/supercomm_0.1.24_linux_arm64.tar.gz"
-      sha256 "53de5d68c65790d97ab5b786a24d51fc2f22a12c697b9f1d98debb4eb7cef0ac"
+    if Hardware::CPU.intel?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.25/supercomm_0.1.25_linux_amd64.tar.gz"
+      sha256 "ffa45f0ff5ebf53d211548d29a989a14973bc5d7a5bd026934099da8c089e9f6"
 
       def install
         bin.install "supercomm"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.24/supercomm_0.1.24_linux_amd64.tar.gz"
-      sha256 "c919cf3a31f89d0aaa33fbae97d97c60d8cbff715e5a42548dfb4a8cc32f4448"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/supercomm/releases/download/v0.1.25/supercomm_0.1.25_linux_arm64.tar.gz"
+      sha256 "bb32226169b33b1d37ce3a28e6424f7fdfb19b6a4e44d873526bd4794f0c26cb"
 
       def install
         bin.install "supercomm"
