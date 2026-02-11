@@ -5,20 +5,20 @@
 class Deleterious < Formula
   desc "Deleterious helps find orphaned resources from AWS CloudFormation DeletionPolicy: Retain"
   homepage "https://github.com/kindlyops/deleterious"
-  version "0.1.49"
+  version "0.1.51"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_darwin_amd64.tar.gz"
-      sha256 "854a6603e62d555b505d11cad1ef8a66661c6ff028c4bac984d0a3d5cee4a711"
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.51/deleterious_0.1.51_darwin_amd64.tar.gz"
+      sha256 "58477099928965d98f080c387745db35e3d54373635cbe840ef5cd691f1962df"
 
       def install
         bin.install "deleterious"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_darwin_arm64.tar.gz"
-      sha256 "854a6603e62d555b505d11cad1ef8a66661c6ff028c4bac984d0a3d5cee4a711"
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.51/deleterious_0.1.51_darwin_arm64.tar.gz"
+      sha256 "d78b562a771ae11111e9bfa1b3e148fac1d2e2a15a8a3da8e02154d81d526b63"
 
       def install
         bin.install "deleterious"
@@ -27,35 +27,34 @@ class Deleterious < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_linux_arm64.tar.gz"
-      sha256 "60812c0411683019cd9914022c178a532df50842276ca8c5fbe0c614047f1f86"
-
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.51/deleterious_0.1.51_linux_amd64.tar.gz"
+      sha256 "2f3ffe7c1192d91aadbc1c854ff58efcdeb166c33a78ca6ab18453a5105d182f"
       def install
         bin.install "deleterious"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.49/deleterious_0.1.49_linux_amd64.tar.gz"
-      sha256 "71e8dbbd92b824b7d3fa49bb78f304bdd485747c56a29a229bf80df1b5d75dcd"
-
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/deleterious/releases/download/v0.1.51/deleterious_0.1.51_linux_arm64.tar.gz"
+      sha256 "19ad08679bfcc364fcfb792da7728e270ad66aa30f55ba41b433be06f3d07b9f"
       def install
         bin.install "deleterious"
       end
     end
   end
 
-  def caveats; <<~EOS
-    Brought to you by
+  def caveats
+    <<~EOS
+      Brought to you by
 
-    _  ___           _ _        ___
-    | |/ (_)_ __   __| | |_   _ / _ \\ _ __  ___
-    | ' /| | '_ \\ / _| | | | | | | | | '_ \\/ __|
-    | . \\| | | | | (_| | | |_| | |_| | |_) \__ \\
-    |_|\\_\\_|_| |_|\\__,_|_|\\__, |\\___/| .__/|___/
-                          |___/      |_|
-    use at your own risk.
-  EOS
+      _  ___           _ _        ___
+      | |/ (_)_ __   __| | |_   _ / _ \\ _ __  ___
+      | ' /| | '_ \\ / _| | | | | | | | | '_ \\/ __|
+      | . \\| | | | | (_| | | |_| | |_| | |_) \__ \\
+      |_|\\_\\_|_| |_|\\__,_|_|\\__, |\\___/| .__/|___/
+                            |___/      |_|
+      use at your own risk.
+    EOS
   end
 
   test do
