@@ -1,6 +1,6 @@
 cask "audience" do
-  version "1.1.0"
-  sha256 "7e9155b7a2d1eb1ca61735d8a6b6f72ccb130991c75077a453c18a492be6a341"
+  version "1.2.0"
+  sha256 "5083a60cedc9f39a93a00270d1f2a070bcbe818c90aadd98f2d86b4a0cef25bb"
 
   url "https://github.com/statik/audience/releases/download/v#{version}/Audience_#{version}_universal.dmg"
   name "Audience"
