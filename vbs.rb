@@ -5,41 +5,39 @@
 class Vbs < Formula
   desc "vbs helps work with video broadcast files and streams."
   homepage "https://github.com/kindlyops/vbs"
-  version "0.2.11"
+  version "0.2.14"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.11/vbs_0.2.11_darwin_amd64.tar.gz"
-      sha256 "d34bb61aab24ebd01c154ced79edc8e5560df5fd236a42ad5fa03fc5e6ccb684"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.14/vbs_0.2.14_darwin_amd64.tar.gz"
+      sha256 "98612dadd0d09ace7f85da7cd834ad10ab37a0ceda36d1c10f2699bcb5bdfd6d"
 
-      def install
+      define_method(:install) do
         bin.install "vbs"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.11/vbs_0.2.11_darwin_arm64.tar.gz"
-      sha256 "0d94e1478e56e1d764694ec9c93ba82018beee0f4672bb9dbb9353bc28e7c917"
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.14/vbs_0.2.14_darwin_arm64.tar.gz"
+      sha256 "4a53b4785f7097ff08f7452a33044b88c1428f8ff7829eaea340fdac124561f2"
 
-      def install
+      define_method(:install) do
         bin.install "vbs"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.11/vbs_0.2.11_linux_amd64.tar.gz"
-      sha256 "fb8575a7e44bbfe76a1b2c57c70cf873337ca577d19fdae55ab9381f56d4bd65"
-
-      def install
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.14/vbs_0.2.14_linux_amd64.tar.gz"
+      sha256 "0032945cb05f197f2fd0493e10c5523fc7cee3f1b9e0cade7670c7b547c0cbfe"
+      define_method(:install) do
         bin.install "vbs"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kindlyops/vbs/releases/download/v0.2.11/vbs_0.2.11_linux_arm64.tar.gz"
-      sha256 "62abaa96b1a380462987a4fc318758a5700082a2fd1e75a1c69faa33bbf8f5d8"
-
-      def install
+      url "https://github.com/kindlyops/vbs/releases/download/v0.2.14/vbs_0.2.14_linux_arm64.tar.gz"
+      sha256 "24d0e91830641aa912fd502bff96af4884ddd5d641e0531d88b819be48225874"
+      define_method(:install) do
         bin.install "vbs"
       end
     end
